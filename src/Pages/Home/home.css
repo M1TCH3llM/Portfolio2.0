@@ -1,20 +1,36 @@
 #home {
-  height: 40rem;
-  width: 60rem;
+  height: 70vh;
+  width: 70vw;
+  max-width: 65rem;
+  min-width: 400px;
   border-radius: 60px;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 45% 45%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+  /* animated border using multiple backrounds */
 
   --border-width: 5px;
-  --bg-color: #343434;
+  --bg-color: #2b2b2b;
 
   border: var(--border-width) solid transparent;
   background-image: linear-gradient(var(--bg-color) 0 0),
-    conic-gradient(from var(--angle), #381d6a 80%, #e0d1ff 88%, #e0d1ff 92%, #381d6a 100%) ;
+    conic-gradient(
+      from var(--angle),
+      #381d6a 80%,
+      #e0d1ff 88%,
+      #e0d1ff 92%,
+      #381d6a 100%
+    );
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
 
   animation: spin 3s linear infinite paused;
   animation-play-state: running;
-
 }
 
 @property --angle {
@@ -27,4 +43,26 @@
   to {
     --angle: 1turn;
   }
+}
+
+.bigBox {
+  height: 90%;
+  width: 90%;
+  border-radius: 20px;
+
+  --border-width: 5px;
+  --bg-color: #343434;
+
+  border: 3px solid transparent;
+  background-image: linear-gradient(var(--bg-color) 0 0),
+    conic-gradient(
+      from var(--angle),
+      #381d6a 80%,
+      #e0d1ff 88%,
+      #e0d1ff 92%,
+      #381d6a 100%
+    );
+
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
 }
